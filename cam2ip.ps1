@@ -1,7 +1,6 @@
-$camera = Get-PnpDevice -FriendlyName "Logitech HD Webcam C310" -Status "OK"
-$bus_num_prop = $camera | Get-PnpDeviceProperty -KeyName "DEVPKEY_Device_Address"
-$cam_id = $bus_num_prop.data
-Write-Output "cam_id: $cam_id"
+# !! Set the camera index manually
+#    I don't find any easy solution to get the camera index to `cv.VideoCapture(index)`
+$cam_id = 0
 
 $cam2ip_url = 'https://github.com/gen2brain/cam2ip/releases/download/1.6/cam2ip-1.6-64bit-cv2.zip'
 
